@@ -14,5 +14,5 @@ build:
   publish_nuget_symbols: true
   verbosity: minimal
 artifacts:
-- path: '*Tobacco.dll'
+- path: '**\Tobacco.dll'
   name: Assembly
