@@ -60,6 +60,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="..\.common\VersionInfo.cs">
+      <Link>Properties\VersionInfo.cs</Link>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="local_time.cs" />
   </ItemGroup>
