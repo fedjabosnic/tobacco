@@ -14,5 +14,10 @@ build:
   publish_nuget_symbols: true
   verbosity: minimal
 artifacts:
-- path: '**\Tobacco.dll'
-  name: Assembly
+- path: '**\*.nupkg'
+  name: Nuget packages
+deploy:
+- provider: NuGet
+  server: https://ci.appveyor.com/nuget/fedjabosnic-84x2lsy2kvbr
+  api_key:
+    secure: kXLsSyuiPo+TDqKvM+d9pNiMpyec1QnrM7wL0kdfBrE=
