@@ -3,6 +3,7 @@ branches:
   only:
   - master
 skip_tags: true
+configuration: Release
 assembly_info:
   patch: true
   file: '**\VersionInfo.*'
@@ -13,3 +14,6 @@ build:
   publish_nuget: true
   publish_nuget_symbols: true
   verbosity: minimal
+artifacts:
+- path: '**\*.nupkg'
+  name: Nuget packages
