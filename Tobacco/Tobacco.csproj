@@ -38,7 +38,10 @@
       <Link>Properties\VersionInfo.cs</Link>
     </Compile>
     <Compile Include="Environment.cs" />
+    <Compile Include="ITime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Time\Actual.cs" />
+    <Compile Include="Time\Virtual.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Tobacco.nuspec" />

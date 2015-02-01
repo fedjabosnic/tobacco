@@ -1,23 +1,33 @@
-﻿using System;
+﻿using Tobacco.Time;
 
 namespace Tobacco
 {
+	/// <summary>
+	/// Tobacco environment exposes access to static tobacco components such as time.
+	/// </summary>
 	public static class Environment
 	{
 		public static ITime Time { get; set; }
-	}
 
-	public interface ITime
-	{
-		DateTime Local { get; }
-		DateTime Universal { get; }
-		DateTime Localized(TimeZoneInfo timezone);
-	}
+		static Environment()
+		{
+			Virtual();
+		}
 
-	public class Time : ITime
-	{
-		public DateTime Local { get { return DateTime.Now; } }
-		public DateTime Universal { get { return DateTime.UtcNow; } }
-		public DateTime Localized(TimeZoneInfo timezone) { return TimeZoneInfo.ConvertTimeBySystemTimeZoneId(Universal, TimeZoneInfo.Utc.Id, timezone.Id); }
+		/// <summary>
+		/// Binds all environment components to their virtual implementations.
+		/// </summary>
+		public static void Virtual()
+		{
+			Time = new Virtual();
+		}
+
+		/// <summary>
+		/// Binds all environment components to their actual implementations.
+		/// </summary>
+		public static void Actual()
+		{
+			Time = new Actual();
+		}
 	}
 }
