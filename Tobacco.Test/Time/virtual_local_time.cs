@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -20,9 +21,9 @@ namespace Tobacco.Test.Time
 		{
 			var time = new Tobacco.Time.Virtual();
 
-			time.Local = DateTime.Parse("21/07/2014 15:34:29");
+			time.Local = DateTime.ParseExact("21/07/2014 15:34:29", "dd/MM/yyyy HH:mm:ss", null);
 
-			time.Local.Should().Be(DateTime.Parse("21/07/2014 15:34:29"));
+			time.Local.Should().Be(DateTime.ParseExact("21/07/2014 15:34:29", "dd/MM/yyyy HH:mm:ss", null));
 		}
 
 		[TestMethod]
@@ -30,7 +31,7 @@ namespace Tobacco.Test.Time
 		{
 			var time = new Tobacco.Time.Virtual();
 
-			time.Local = DateTime.Parse("21/07/2014 15:34:29");
+			time.Local = DateTime.ParseExact("21/07/2014 15:34:29", "dd/MM/yyyy HH:mm:ss", null);
 
 			time.Local.Kind.Should().Be(DateTimeKind.Local);
 		}

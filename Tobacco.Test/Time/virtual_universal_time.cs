@@ -20,9 +20,9 @@ namespace Tobacco.Test.Time
 		{
 			var time = new Tobacco.Time.Virtual();
 
-			time.Universal = DateTime.Parse("21/07/2014 15:34:29");
+			time.Universal = DateTime.ParseExact("21/07/2014 15:34:29", "dd/MM/yyyy HH:mm:ss", null);
 
-			time.Universal.Should().Be(DateTime.Parse("21/07/2014 15:34:29"));
+			time.Universal.Should().Be(DateTime.ParseExact("21/07/2014 15:34:29", "dd/MM/yyyy HH:mm:ss", null));
 		}
 
 		[TestMethod]
@@ -30,7 +30,7 @@ namespace Tobacco.Test.Time
 		{
 			var time = new Tobacco.Time.Virtual();
 
-			time.Universal = DateTime.Parse("21/07/2014 15:34:29");
+			time.Universal = DateTime.ParseExact("21/07/2014 15:34:29", "dd/MM/yyyy HH:mm:ss", null);
 
 			time.Universal.Kind.Should().Be(DateTimeKind.Utc);
 		}
